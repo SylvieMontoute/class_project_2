@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="HTML 5, CSS 3, JavaScript,JQuery, AngularJs"/>
+<meta name="description" content="Dynamic web development">
+<meta name="author" content="Sylvain">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chlamydia & Gonorrhea Case Report</title>
+<style>
+</style>
+<link rel="stylesheet" type='text/css' href="styles.css"/>
+</head>
+<body>
+    <article class="col-8">
+      <h3>STI Case Reporting Form for Chlamydia and Gonorrhea</h3>
+      <form action="caseinformation.py" method="post" onsubmit="return validatestiform();"name="stiform">
+      <table class="input-control">
+        <tr>
+          <th> Date:</th>
+          <td><input type="date" name="dateofreport" id="date"/><span id="dateErr"></span></td>
+          <th>Person Completing the Form:</th>
+          <td><input type="text" name="nameofreporter" id="pcf"/><span id="pcfErr"></span></td>
+        </tr>
+        <tr>
+          <th>Health Provider:</th>
+          <td><input type="text" name="Health Provider" id="hp"/><span id="hpErr"></span></td>
+          <th>Contact / Phone Number:</th>
+          <td><input type="tel" name="contactofreporter" id="phonenumber"/><span id="phonenumberErr"></span></td>
+        </tr>
+      </table>
+      <p>Your lab reported a communicable disease on the patient shown below
+         and listed you as the provider. The Oregon Department of Human Services
+         and Washington County require additional information.
+         The fax cover sheet you have received references Oregon Law (ORS 433)
+         that requires you to report this information.<b>Please complete the form within
+         24 hours, or by the end of the next working day, and fax it back to our
+         office at 503-846-3644.</b> If you prefer you may call to report the required
+         information. We appreciate your cooperation and prompt handling of this
+         confidential report.</p>
+<h3>Patient Information</h3>
+<table class="input-control">
+<tr>
+  <th>Name:</th>
+  <td><input type="text" onblur="return validatefn();" name="fullname" id="fullname"/><span id="fullnameErr"></span></td>
+  <td></td>
+  <td></td>
+  <th>Date  of Birth:</th>
+  <td><input type="date" name="dob" id="dob"/><span id="dobErr"></span></td>
+  <td></td>
+  <th>Gender:</th>
+  <td><input name="gender" type="checkbox"  id="gender"/><span id="genderErr"></span>Female</td>
+  <td><input name="gender" type="checkbox"  id="gender"/>Male</td>
+  <td><input name="gender" type="checkbox"  id="gender"/>Other</td>
+  </tr>
+       <tr>
+        <th>Home Address:</th>
+        <td><input type="text" name="add"/></td>
+      </tr>
+        <tr>
+         <th>Phone Number:</th>
+         <td><input type="tel" name="telnum"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-452-6789"/></td>
+         <td></td>
+         <td></td>
+         <th>Alternative Number:</th>
+         <td></td>
+         <td><input type="tel" name="telnum"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-452-6789"/></td>
+       </tr>
+       <tr>
+         <th>Pregnancy Test Results:</th>
+         <td><input name="pregnancyresult" type="checkbox"  id="pregnancyresult"/>N/A</td>
+         <td><input name="pregnancyresult" type="checkbox"  id="pregnancyresult"/>Negative</td>
+         <td><input name="pregnancyresult" type="checkbox"  id="pregnancyresult"/>Unknown</td>
+         <td><input name="pregnancyresult" type="checkbox"  id="pregnancyresult"/>Positive:</td>
+         <th>If positive how many weeks?</th>
+        <td><input type="text" name="positive"/></td>
+       </tr>
+       <tr>
+       <th>Ethnicity:</th>
+        <td><input name="ethnicity" type="checkbox"  id="ethnicity"/><span id="ethnicityErr"></span>Hispanic</td>
+        <td></td>
+         <th>Race:</th>
+         <td><input name="race" type="checkbox"  id="race"/><span id="raceErr"></span>White</td>
+         <td><input name="race" type="checkbox"  id="race"/>American Indian</td>
+         <td><input name="race" type="checkbox"  id="race"/>Unknown</td>
+         <th>Gender of Sex Partner(s):</th>
+         <td><input name="race" type="checkbox"  id="gendersp"/><span id="genderspErr"></span>Male</td>
+         <td><input name="race" type="checkbox"  id="gendersp"/>Female</td>
+           </tr>
+           <tr>
+             <td></td>
+             <td><input name="ethnicity" type="checkbox"  id="ethnicity"/>Non-Hispanic</td>
+             <td></td>
+             <td></td>
+             <td><input name="race" type="checkbox"  id="race"/>Black</td>
+             <td><input name="race" type="checkbox"  id="race"/>Alaskan</td>
+             <td><input name="race" type="checkbox"  id="race"/>Other:</td>
+             <td></td>
+             <td><input name="race" type="checkbox"  id="gendersp"/>Both</td>
+             <td><input name="race" type="checkbox"  id="gendersp"/>Unknown</td>
+            </tr>
+           <tr>
+             <td></td>
+             <td><input name="ethnicity" type="checkbox"  id="ethnicity"/>Unknown</td>
+             <td></td>
+             <td></td>
+             <td><input name="race" type="checkbox"  id="race"/>Asian</td>
+             <td><input name="race" type="checkbox"  id="race"/>Pacific Islander</td>
+             <td><input type="text" name="race"/></td>
+           </tr>
+           <tr>
+             <th colspan="5">Test Result Type:</th>
+             <th colspan="2">Previous HIV Testing:</th>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/> <span id="hivtestingErr"></span>Yes</td>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/>No</td>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/>Unknown</td>
+           </tr>
+           <tr>
+             <td colspan="2"><input name="testresult" type="checkbox"  id="testresult"/><span id="testresultErr"></span>Chlamydia Positive Result</td>
+             <td colspan="2"><input name="testresult" type="checkbox"  id="testresult"/>Gonorrhea Positive Result</td>
+             <td></td>
+             <th colspan="2">If yes, last result was?</th>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/>POS</td>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/>NEG</td>
+             <td><input name="hivtesting" type="checkbox"  id="hivtesting"/>Unknown</td>
+            </tr>
+           <tr>
+            <td><input type="date" name="dop"/></td>
+            <td></td>
+             <td><input type="date" name="dop"/></td>
+             <td></td>
+             <th>Month of last test</th>
+             <td colspan="2"><input type="text" name="monthoftest"/></td>
+             <th>Year of last test</th>
+             <td><input type="text" name="yearoftest"/></td>
+           </tr>
+            <tr>
+            <th>Reason for Exam:</th>
+            <td></td>
+            <th>Diagnosis:</th>
+            <td></td>
+            <td></td>
+            <th>Site(s)</th>
+            <tr>
+            <td><input name="reason" type="checkbox"  id="reason"/><span id="reasonErr"></span>Syptomatic</td>
+            <td></td>
+            <td><input name="diagnosis" type="checkbox"  id="diagnosis"/><span id="diagnosisErr"></span>Asyptomatic</td>
+            <td></td>
+            <td></td>
+            <td><input name="site" type="checkbox"  id="site"/><span id="siteErr"></span>Cervix</td>
+            <td><input name="site" type="checkbox"  id="site"/>Ocular</td>
+            </tr>
+            <tr>
+            <td><input name="reason" type="checkbox"  id="reason"/>Routine Exam</td>
+            <td></td>
+            <td><input name="diagnosis" type="checkbox"  id="diagnosis"/>Syptomatic-Uncomplicated</td>
+            <td></td>
+            <td></td>
+            <td><input name="site" type="checkbox"  id="site"/>Vaginal</td>
+            <td><input name="site" type="checkbox"  id="site"/>Urine</td>
+            </tr>
+            <tr>
+            <td><input name="reason" type="checkbox"  id="reason"/>Test for Cure</td>
+            <td></td>
+            <td><input name="diagnosis" type="checkbox"  id="diagnosis"/>Pelvic Inflammatory Disease (PID)</td>
+            <td></td>
+            <td></td>
+            <td><input name="site" type="checkbox"  id="site"/>Urethra</td>
+            <td><input name="site" type="checkbox"  id="site"/>Pharynx</td>
+            </tr>
+            <tr>
+            <td><input name="reason" type="checkbox"  id="reason"/>Exposed for Infection</td>
+            <td></td>
+            <td><input name="diagnosis" type="checkbox"  id="diagnosis"/>Ophthalmia/conjunctives</td>
+            <td></td>
+            <td></td>
+            <td><input name="site" type="checkbox"  id="site"/>Rectum</td>
+            <td><input name="site" type="checkbox"  id="site"/>Other</td>
+            </tr>
+            <tr>
+            <td><input name="reason" type="checkbox"  id="reason"/>Pregnant</td>
+            <td></td>
+            <td><input name="diagnosis" type="checkbox"  id="diagnosis"/>Disseminated</td>
+            </tr>
+         </table>
+         <table class="input-control">
+           <tr>
+           <th colspan="4"><h3>GONORRHEA TREATMENT PLAN:</h3></th>
+           <th></th>
+           <th colspan="4"><h3>CHLAMYDIA TREATMENT PLAN:</h3></th>
+         </tr>
+           <tr>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>Rocephin/Ceftriaxone 250mg IM x 1</td>
+             <td></td>
+             <td><input type="date" name="dogplan"/></td>
+             <td></td>
+             <td></td>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>Azithromycin 1gm orally in a single dose.</td>
+             <td></td>
+             <td><input type="date" name="dogplan"/></td>
+            </tr>
+            <tr>
+            <td colspan="5" align="center">PLUS</td>
+             <td colspan="3"align="center">OR</td>
+           </tr>
+           <tr>
+             <td colspan="4"><input name="cplan" type="checkbox"  id="cplan"/>Azithromycin 1gm orally in a single dose</td>
+             <td></td>
+             <td colspan="3"><input name="cplan" type="checkbox"  id="cplan"/>Doxycyline 10omg BID x 7 days.</td>
+             <td><input type="date" name="dcplan"/></td>
+           </tr>
+           <tr>
+             <th colspan="4" align="center">Alternative Treatment Regimens</th>
+             <th colspan="4" align="center">Alternative Treatment Regimens</th>
+           </tr>
+           <tr>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>Cefixime 400mg orally in a single dose</td>
+             <td></td>
+             <td><input type="date" name="dogplan"/></td>
+             <td></td>
+             <td></td>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>Amoxicillin 500mg orally tid X 7 days</td>
+             <td></td>
+             <td><input type="date" name="dcplan"/></td>
+            </tr>
+            <tr>
+            <td colspan="5" align="center">PLUS</td>
+            </tr>
+            <tr>
+            <td colspan="4"><input name="cplan" type="checkbox"  id="cplan"/>Azithromycin 1gm orally in a single dose</td>
+          </tr>
+          <tr>
+            <td><input name="gplan" type="checkbox"  id="gplan"/>Other Treatment:</td>
+            <td></td>
+            <td><input type="date" name="dogplan"/></td>
+            <td></td>
+            <td></td>
+            <td><input name="gplan" type="checkbox"  id="cplan"/>Other Treatment:</td>
+            <td></td>
+            <td><input type="date" name="dcplan"/></td>
+           </tr>
+           <tr>
+           <td colspan="4"><input type="text" name="gplan"/></td>
+           <td></td>
+           <td colspan="4"><input type="text" name="cplan"/></td>
+           <td></td>
+           </tr>
+           <tr>
+             <th colspan="6">IF NOT TREATED YET - PATIENT NOTIFIED OF INFECTION:</th>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>Yes</td>
+             <td><input name="gplan" type="checkbox"  id="gplan"/>No</td>
+             <td></td>
+          </tr>
+          <tr>
+            <th colspan="6">Does the provider need assistance in contacting a
+            client that has not responded for treatment?</th>
+            <td><input name="gplan" type="checkbox"  id="gplan"/>Yes</td>
+            <td><input name="gplan" type="checkbox"  id="gplan"/>No</td>
+            <td></td>
+         </tr>
+         </table>
+         <table class="input-control">
+         <tr>
+         <th colspan="6">PARTNER MANAGEMENT PLAN - Ensuring Partner Treatment</th>
+        </tr>
+        <tr>
+          <th colspan="4">Expedited Partner Therapy dispensed at time of visit?</th>
+          <td><input name="treatment" type="checkbox"  id="treatment"/>No</td>
+          <td><input name="treatment" type="checkbox"  id="treatment"/>Yes</td>
+          <th>How many partners?</th>
+          <td><input type="text" name="treatment"/></td>
+          <td></td>
+       </tr>
+       <tr>
+         <th colspan="8">When resources allow the health department will be contacting
+        gonorrhea cases and high risk chlamydia cases to offer partner servises.</th>
+       </tr>
+       <tr>
+         <th colspan="8">Please notify patient that public health worker may be contacting them to
+         offer partner services.</th>
+       </tr>
+       <tr>
+         <td colspan="8"><input name="treatment" type="checkbox"  id="treatment"/>PROVIDER
+           REQUESTS THAT CLIENT NOT BE CONTACTED BY PUBLIC HEALTH/PROVIDER WILL ASSURE PARTNER TREATMENT</td>
+       </tr>
+     </table>
+    </article>
+      <button style="float:right" type="submit" name="submit">Submit</button>
+  </form>
+<script src="../Script/assignment_12.js"></script>
+</body>
+</html>

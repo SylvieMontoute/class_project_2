@@ -1,0 +1,180 @@
+*{
+  box-sizing: border-box;
+}
+[class*="col-"]{
+  float: left;
+  padding:10px;
+}
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"]{
+  width: 100%
+}
+@media only screen and (min-width:768px){
+
+.col-1{
+  width: 8.33%;
+}
+.col-2{
+  width: 16.66%;
+}
+.col-3{
+  width: 24.99%;
+}
+.col-4{
+  width: 33.33%;
+}
+.col-5{
+  width: 41.66%;
+}
+.col-6{
+  width: 50%;
+}
+.col-7{
+  width: 58.33%;
+}
+.col-8{
+  width: 66.66%;
+}
+.col-9{
+  width: 75%;
+}
+.col-10{
+  width: 83.33%;
+}
+.col-11{
+  width: 91.66%;
+}
+.col-12{
+  width: 100%;
+}
+}
+html{
+  font-family: "Lucida Sans", sans-serif;
+}
+.nav1{
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  height: 100px;
+  background-color: grey;
+  color: black;
+}
+.nav1 ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav1 li{
+display: inline;
+float: right;
+  }
+.nav1 li a{
+  color: #f2f2f2;
+  text-align: center;
+    text-decoration: none;
+    margin: 50px;
+    float: left;
+  }
+.nav1 li:hover{
+  background-color:#800000;
+  color: black;
+  height: 100px;
+}
+section{
+  position: relative;
+  top: 120px;
+}
+article{
+  border: 2px groove #0099cc;
+}
+article h3,h5{
+  text-align: center;
+  background-color: grey;
+}
+section nav ul{
+  list-style-type: none;
+}
+section nav li{
+  margin-bottom: 10px;
+  color:#ffffff;
+}
+.loginform{
+  margin:auto;
+  border: 3px solid #f1f1f1;
+  padding: 16px;
+  width: 400px;
+}
+input[type=date]{
+  padding: 5px;
+}
+input[type=email], input[type=password] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+.col-4{
+  display: block;
+  background-color: #A9A9A9;
+}
+.col-8{
+  display: block;
+}
+table{
+  table-layout: fixed;
+  width:100%;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align:left;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  th, td{
+    padding:5px;
+  }
+  tr{
+    border: 1px solid black;
+  }
+  .input-control input:focus{
+    outline: 0;
+  }
+  .input-control.success input{
+    border-color: #09c372;
+  }
+  .input-control.error input{
+    border-color: #ff3860;
+  }
+  span{
+    color: red;
+  }
+  #container1, #container2{
+  float:left;
+  width:400px;
+  height: 350px;
+  margin: 10px;
+  border: 5px outset blue;
+  border-radius: 10px;
+    }
+  #dragitem1, #dragitem2, #dragitem3, #dragitem4, #dragitem5, #dragitem6, #dragitem7{
+    background-color: gray;
+    height: 40px;
+    width:300px;
+    border: 2px solid green;
+    margin:5px;
+  }

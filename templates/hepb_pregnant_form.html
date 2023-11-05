@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="HTML 5, CSS 3, JavaScript,JQuery, AngularJs"/>
+<meta name="description" content="Dynamic web development">
+<meta name="author" content="Sylvain">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hep B Pregnant Women Case Report</title>
+<style>
+</style>
+<link rel="stylesheet" type='text/css' href="styles.css"/>
+</head>
+<body>
+    <article class="col-8">
+      <h3>Hepatitis B Infected Pregnant Woman Reporting Form</h3>
+      <form action="caseinformation.py" method="post">
+      <table>
+        <tr>
+          <th> Last Name:</th>
+          <th>First Name:</th>
+          <th> Middle Name:</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="lastname"/></td>
+          <td><input type="text" name="firstname"/></td>
+          <td><input type="text" name="middlename"/></td>
+        </tr>
+        <tr>
+          <th>Date of Birth:</th>
+          <th>Estimated Delivery Date:</th>
+          <th>Patient aware of HepB+ status?</th>
+        </tr>
+        <tr>
+          <td><input type="date" name="dob"/></td>
+          <td><input type="date" name="deliverydate"/></td>
+          <td><input type="checkbox" name="hepbstatus"/>Yes</td>
+          <td><input type="checkbox" name="hepbstatus"/>No</td>
+          <td><input type="checkbox" name="hepbstatus"/>Unk</td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <th>City:</th>
+          <th>State:</th>
+          <th>Zip:</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="add"/></td>
+          <td><input type="text" name="city"/></td>
+          <td><input type="text" name="state" pattern="\z{0,2}"/></td>
+          <td><input type="text" name="zip" pattern="\e{0,5}"/></td>
+        </tr>
+        <tr>
+          <th>Phone Number:</th>
+          <th>Type of Insurance</th>
+        </tr>
+        <tr>
+          <td><input type="tel" name="tel"pattern="(0-9){3}-(0-9){3}-(0-9){4}"/></td>
+          <td><input type="checkbox" name="insurance"/>Private</td>
+          <td><input type="checkbox" name="insurance"/>Medicaid</td>
+          <td><input type="checkbox" name="insurance"/>Medicare</td>
+          <td><input type="checkbox" name="insurance"/>Uninsured</td>
+          <td><input type="checkbox" name="insurance"/>Unknown</td>
+        </tr>
+        <tr>
+          <th>Race</th>
+          <th>Hispanic</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="race"/>American Indian/Alaskan Native</td>
+          <td><input type="checkbox" name="race"/>Asian</td>
+          <td><input type="checkbox" name="race"/>Black/African Am.</td>
+          <td><input type="checkbox" name="hispanic"/>Yes</td>
+          <td><input type="checkbox" name="hispanic"/>No</td>
+          <td><input type="checkbox" name="hispanic"/>Unk</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="race"/>Native Hawaiian/ Pacific Islander</td>
+          <td><input type="checkbox" name="race"/>White</td>
+          <td><input type="checkbox" name="race"/>Unk</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="race"/>other</td>
+        </tr>
+        <tr>
+          <th>Country of Birth:</th>
+          <th>Primary Language</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="cob"/></td>
+          <td><input type="text" name="language"/></td>
+        </tr>
+      </table>
+     <h3>LABORATORY INFORMATION</h3>
+      <table>
+        <tr>
+        <th>Laboratory Results:</th>
+        <td>Check off below any POSITIVE labs and attach positive Hep B lab results</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="results"/>HBsAg (Hep B surface antigen)</td>
+          <td><input type="checkbox" name="results"/>HBeAg (Hep Be antigen)</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="results"/>IgM anti-HBc (IgM antibody to Hep B core antigen)</td>
+          <td><input type="checkbox" name="results"/>HBV DNA (Hep B virus DNA)</td>
+        </tr>
+         </table>
+         <h3>CLINICAL INFORMATION</h3>
+         <table>
+          <tr>
+           <th>OB Provider Last Name:</th>
+           <th>OB Provider First Name:</th>
+           <th>Provider Type</th>
+         </tr>
+         <tr>
+           <td><input type="text" name="plastname"/></td>
+           <td><input type="text" name="pfirstname"/></td>
+           <td><input type="checkbox" name="type"/>MD/DO</td>
+         </tr>
+         <tr>
+           <th>Expected Delivery Facility:</th>
+           <td><input type="checkbox" name="type"/>CNM/NP</td>
+         </tr>
+         <tr>
+           <td><input type="text" name="deliveryfacility"/></td>
+           <td><input type="checkbox" name="type"/>PA</td>
+         </tr>
+         <tr>
+           <th>Reporting Health Care Facility:</th>
+           <td><input type="text" name="carefacility"/></td>
+         </tr>
+         <tr>
+           <th>Address:</th>
+           <th>City:</th>
+           <th>State:</th>
+           <th>Zip:</th>
+         </tr>
+         <tr>
+           <td><input type="text" name="add"/></td>
+           <td><input type="text" name="city"/></td>
+           <td><input type="text" name="state" pattern="\z{0,2}"/></td>
+           <td><input type="text" name="zip" pattern="\e{0,5}"/></td>
+         </tr>
+         <tr>
+           <th>Contact Person at Reporting Facility:</th>
+           <td><input type="text" name="reportingfacility"/></td>
+         </tr>
+         <tr>
+           <th>Direct Phone:</th>
+            <td><input type="tel" name="directtel"pattern="(0-9){3}-(0-9){3}-(0-9){4}*(0-9){4}"/></td>
+           <th>Date Form Completed:</th>
+           <td><input type="date" name="datecompleted"/></td>
+         </tr>
+      </table>
+    </article>
+  </form>
+<section>
+</body>
+</html>
